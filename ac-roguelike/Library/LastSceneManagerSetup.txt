@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Resources/Scenes/Hauke.unity
+=======
+- path: Assets/Resources/Scenes/KilianScene.unity
+>>>>>>> Kilian
   isLoaded: 1
   isActive: 1
