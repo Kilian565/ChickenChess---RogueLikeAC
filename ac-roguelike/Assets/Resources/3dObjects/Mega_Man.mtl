@@ -1,0 +1,66 @@
+newmtl Mega_Man:blinn1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd Rockman_Body_Texture.psd
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 0.06
+newmtl Mega_Man:blinn2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd Rockman_Helmet_UV_Snap.psd
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 0.06
+newmtl Mega_Man:blinn3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 0.06
+newmtl Mega_Man:blinn4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 0.06
+newmtl Mega_Man:phong1SG
+illum 4
+Kd 0.06 0.28 0.29
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Mega_Man:phongE1SG
+illum 4
+Kd 1.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 0.55 0.55 0.55
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 0.06
+newmtl Mega_Man:phongE2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.06
+newmtl Mega_Man:phongE3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.06
