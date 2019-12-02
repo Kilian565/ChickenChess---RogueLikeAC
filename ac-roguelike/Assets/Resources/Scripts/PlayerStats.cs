@@ -6,8 +6,8 @@ using System.IO;
 public class PlayerStats : MonoBehaviour
 {
     public static PlayerStats masterScript;
-    string filename = "PlayerStats.txt";
-    string path;
+    //string filename = "PlayerStats.txt";
+    //string path;
 
 
     public static int playerLevel;
@@ -34,7 +34,7 @@ public class PlayerStats : MonoBehaviour
 
     void Start ()
     {
-        path = Path.Combine(Application.dataPath, filename);
+        //path = Path.Combine(Application.dataPath, filename);
     }
 	
 	void Update ()

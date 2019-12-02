@@ -10,7 +10,7 @@ public class UnitManager : MonoBehaviour
 
     private void Awake()
     {
-
+        
     }
 
     void Start ()
