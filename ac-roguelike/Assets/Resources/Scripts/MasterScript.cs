@@ -13,13 +13,16 @@ public class MasterScript : MonoBehaviour
     GameObject tilePref;
     GameObject cameraPref;
     GameObject lightPref;
+    GameObject enemyPref;
     GameObject shopPref;
+    GameObject enemy;
 
     private void Awake()
     {
         tilePref = Resources.Load<GameObject>("Prefabs/Cube");
         cameraPref = Resources.Load<GameObject>("Prefabs/MainCamera");
         lightPref = Resources.Load<GameObject>("Prefabs/Light");
+        enemyPref = Resources.Load<GameObject>("3dObjects/Mega_Man");
     }
     void Start ()
     {
@@ -37,6 +40,10 @@ public class MasterScript : MonoBehaviour
     {
         Instantiate(cameraPref);
         Instantiate(lightPref);
+        enemy = Instantiate(enemyPref);
+        enemy.transform.localScale = new Vector3(0.03f, 0.03f, 0.03f);
+        enemy.transform.position = new Vector3(3.5f, 7f, -0.5f);
+        enemy.transform.eulerAngles = new Vector3(90f, 0f, 180f);
     }
 
     private void GridConstruct()

@@ -63,6 +63,7 @@
     <Compile Include="Assets\Resources\Scripts\MasterScript.cs" />
     <Compile Include="Assets\Resources\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Resources\Scripts\ShopManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\ShopSlots.cs" />
     <Compile Include="Assets\Resources\Scripts\TileHighlighter.cs" />
     <Compile Include="Assets\Resources\Scripts\Unit.cs" />
     <Compile Include="Assets\Resources\Scripts\UnitManager.cs" />
