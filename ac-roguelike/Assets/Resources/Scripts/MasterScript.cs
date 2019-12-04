@@ -19,6 +19,9 @@ public class MasterScript : MonoBehaviour
 
     private void Awake()
     {
+        new Grid(gridwidth,gridheigth,1, new Vector3(0,0,0));
+
+
         tilePref = Resources.Load<GameObject>("Prefabs/Cube");
         cameraPref = Resources.Load<GameObject>("Prefabs/MainCamera");
         lightPref = Resources.Load<GameObject>("Prefabs/Light");
