@@ -10,6 +10,8 @@ public class MasterScript : MonoBehaviour
     public int gridheigth = 8;
     public int gridwidth = 8;
 
+    Canvas uiShopPref;
+
     GameObject tilePref;
     GameObject cameraPref;
     GameObject lightPref;
@@ -21,7 +23,7 @@ public class MasterScript : MonoBehaviour
     {
         new Grid(gridwidth,gridheigth,1, new Vector3(0,0,0));
 
-
+        uiShopPref = Resources.Load<Canvas>("Prefabs/InGame_UI");
         tilePref = Resources.Load<GameObject>("Prefabs/Cube");
         cameraPref = Resources.Load<GameObject>("Prefabs/MainCamera");
         lightPref = Resources.Load<GameObject>("Prefabs/Light");
@@ -44,6 +46,7 @@ public class MasterScript : MonoBehaviour
         Instantiate(cameraPref);
         Instantiate(lightPref);
         enemy = Instantiate(enemyPref);
+        Instantiate(uiShopPref);
         enemy.transform.localScale = new Vector3(0.03f, 0.03f, 0.03f);
         enemy.transform.position = new Vector3(3.5f, 7f, -0.5f);
         enemy.transform.eulerAngles = new Vector3(90f, 0f, 180f);
