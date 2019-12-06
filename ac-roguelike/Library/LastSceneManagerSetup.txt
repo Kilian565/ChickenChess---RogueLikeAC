@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Resources/Scenes/KilianScene.unity
-=======
 - path: Assets/Resources/Scenes/Hauke.unity
->>>>>>> alphaDev
   isLoaded: 1
   isActive: 1

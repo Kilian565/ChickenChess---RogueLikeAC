@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
+    public MasterScript masterScript;
     void Start ()
     {
 		
 	}
 	
 	void Update ()
-    {
+    {   
+
+        
 		
 	}
+
+    public void FindEnemy()
+    {
+
+    }
+    
 }
 public class UnitData
 {
@@ -29,6 +38,7 @@ public class UnitData
     public float armor;
     public float magicResistance;
     public int critChance;
+    public GameObject gameObject;
 
 
     public UnitData()
@@ -49,6 +59,7 @@ public class UnitData
                     float armor,
                     float magicResistance,
                     int critChance
+                    
                     )
     {
         this.unitName = unitName;
@@ -63,5 +74,14 @@ public class UnitData
         this.armor = armor;
         this.magicResistance = magicResistance;
         this.critChance = critChance;
+       
     }
+
+    public void FindEnemy()
+    {
+
+
+    }
+
+
 }

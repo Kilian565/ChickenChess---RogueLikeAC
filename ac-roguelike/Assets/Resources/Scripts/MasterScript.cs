@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MasterScript : MonoBehaviour
 {
+    public bool RoundIsStarted;
 
     public static List<GridElement> tiles = new List<GridElement>();
     public static GridElement tile;
@@ -21,7 +22,7 @@ public class MasterScript : MonoBehaviour
 
     private void Awake()
     {
-        new Grid(gridwidth,gridheigth,1, new Vector3(0,0,0));
+        new Grid(gridwidth, gridheigth, 1, new Vector3(0, 0, 0));
 
         uiShopPref = Resources.Load<Canvas>("Prefabs/InGame_UI");
         tilePref = Resources.Load<GameObject>("Prefabs/Cube");
@@ -29,17 +30,18 @@ public class MasterScript : MonoBehaviour
         lightPref = Resources.Load<GameObject>("Prefabs/Light");
         enemyPref = Resources.Load<GameObject>("3dObjects/Mega_Man");
     }
-    void Start ()
+    void Start()
     {
         GameConstruct();
         GridConstruct();
-	}
-	
-	
-	void Update ()
+        BenchConstruct();
+    }
+
+
+    void Update()
     {
-	     
-	}
+
+    }
 
     void GameConstruct()
     {
@@ -60,9 +62,37 @@ public class MasterScript : MonoBehaviour
             {
                 tile = new GridElement(new Vector2Int(x, y));
                 tiles.Add(tile);
-                tile.appearance = Instantiate(tilePref);
-                tile.appearance.transform.position = new Vector3(tile.coordinate.x, tile.coordinate.y, 0);
+                tile.gameObject = Instantiate(tilePref);
+                tile.gameObject.transform.position = new Vector3(tile.coordinate.x, tile.coordinate.y, 0);
+                tile.gameObject.name = "Tile " + x + "/" + y;
             }
+        }
+    }
+    private void BenchConstruct()
+    {
+        for (int x = 0; x < gridwidth; x++)
+        {
+            tile = new GridElement(new Vector2Int(x, -2));
+            tiles.Add(tile);
+            tile.gameObject = Instantiate(tilePref);
+            tile.gameObject.transform.position = new Vector3(tile.coordinate.x, tile.coordinate.y, 0);
+            tile.gameObject.name = "Bench " + x;
+
+        }
+
+    }
+
+    private void RoundStart()
+    {
+
+        if(Input.GetKey(KeyCode.G))
+        {
+            RoundIsStarted = true;
+        }
+
+        if (RoundIsStarted)
+        {
+            
         }
     }
 }
