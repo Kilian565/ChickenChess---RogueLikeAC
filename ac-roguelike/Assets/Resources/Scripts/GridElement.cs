@@ -9,7 +9,7 @@ public class GridElement
     public Vector2Int coordinate;
     public string Name;
     public string position;
-    public GameObject appearance;
+    public GameObject gameObject;
 
     // Konstruktor **parameter hinzufügen**
     public GridElement(Vector2Int coordinate)
