@@ -14,7 +14,6 @@ public class Unit : MonoBehaviour
 		
 	}
 }
-
 public class UnitData
 {
     public string unitName;

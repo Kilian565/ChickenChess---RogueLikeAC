@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class UnitManager : MonoBehaviour
 {
-    public static List<GameObject> tier1Units;
-    public static List<GameObject> tier2Units;
-    public static List<GameObject> tier3Units;
 
     private void Awake()
     {
@@ -15,7 +12,7 @@ public class UnitManager : MonoBehaviour
 
     void Start ()
     {
-        
+
 	}
 	
 	void Update ()
