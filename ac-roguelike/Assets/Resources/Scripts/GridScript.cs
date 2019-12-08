@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Grid
+public class GridScript
 
 {
 
@@ -12,14 +12,17 @@ public class Grid
     private int height;
     private float cellSize;
     private Vector3 originPosition;
+    private GameObject gameObject;
     private int[,] gridArray;
 
-    public Grid(int width, int height, float cellSize, Vector3 originPosition)
+    public GridScript(int width, int height, float cellSize, Vector3 originPosition,GameObject gameObject)
     {
         this.width = width;
         this.height = height;
         this.cellSize = cellSize;
         this.originPosition = originPosition;
+        this.gameObject = gameObject;
+
 
         gridArray = new int[width, height];
     }

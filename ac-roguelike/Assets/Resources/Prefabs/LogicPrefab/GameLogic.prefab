@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114506131839559938}
   - component: {fileID: 114758424607552404}
   - component: {fileID: 114639410171232416}
+  - component: {fileID: 114319862410353798}
   m_Layer: 0
   m_Name: GameLogic
   m_TagString: Untagged
@@ -54,9 +55,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4787a6103f843cc43989fc6ced772589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RoundIsStarted: 0
   gridheigth: 8
   gridwidth: 8
---- !u!114 &114506131839559938
+--- !u!114 &114319862410353798
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -64,9 +66,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1027434668781338}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e0a47fc70e056d4c8a7516887a45c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies: []
+  Funits: []
+--- !u!114 &114506131839559938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1027434668781338}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8eb8a8562148f2c4c9f790259df43573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 0
 --- !u!114 &114639410171232416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -84,7 +100,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1027434668781338}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47d117469beb0704ba1363661c8d635b, type: 3}
   m_Name: 
