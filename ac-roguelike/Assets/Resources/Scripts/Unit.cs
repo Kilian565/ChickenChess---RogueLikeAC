@@ -4,23 +4,7 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    public MasterScript masterScript;
-    void Start ()
-    {
-		
-	}
-	
-	void Update ()
-    {   
-
-        
-		
-	}
-
-    public void FindEnemy()
-    {
-
-    }
+    public bool selected;
     
 }
 public class UnitData
@@ -29,6 +13,7 @@ public class UnitData
     public int unitLevel;
     public bool isEnemey;
     public int race;
+
 
     public float healthPoints;
     public float physicalDamage;
@@ -39,6 +24,8 @@ public class UnitData
     public float magicResistance;
     public int critChance;
     public GameObject gameObject;
+    private Vector2Int coord;
+    private Weapons weapon;
 
 
     public UnitData()
@@ -83,5 +70,27 @@ public class UnitData
 
     }
 
+    public Vector2Int GetCoordinate()
+    {
+        coord = new Vector2Int((int)gameObject.transform.position.x, (int)gameObject.transform.position.y);
+        return coord;
 
+    }
+   public void SetTag()
+    {
+        if (isEnemey)
+        {
+            gameObject.tag = "Enemy"; 
+        }
+        else
+        {
+            gameObject.tag = "Unit";
+        }
+
+    }
+    public void Attack()
+    {
+
+
+    }
 }

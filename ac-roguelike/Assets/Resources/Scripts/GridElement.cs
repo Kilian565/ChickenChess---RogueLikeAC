@@ -10,6 +10,8 @@ public class GridElement
     public string Name;
     public string position;
     public GameObject gameObject;
+    public bool isOccupied;
+    public bool isSelected;
 
     // Konstruktor **parameter hinzufügen**
     public GridElement(Vector2Int coordinate)

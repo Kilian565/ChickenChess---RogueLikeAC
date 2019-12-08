@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SimplePathfind : MonoBehaviour {
 
-	// Use this for initialization
+    
 	void Start () {
-		
+       
 	}
 	
 	// Update is called once per frame

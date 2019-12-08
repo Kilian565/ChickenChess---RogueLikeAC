@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 23731366685182286}
   - component: {fileID: 135132102187688728}
   - component: {fileID: 114593235274457176}
+  - component: {fileID: 114195074891064558}
+  - component: {fileID: 114569292591883636}
   m_Layer: 0
   m_Name: Platzhalter3
   m_TagString: Untagged
@@ -85,6 +87,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1963649862079868}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114195074891064558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1963649862079868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eb8a8562148f2c4c9f790259df43573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
+--- !u!114 &114569292591883636
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1963649862079868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a4812f9f17e7d04b8f859510106284b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114593235274457176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 805bae9bff92d494a90ee95a0bd2dad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
 --- !u!135 &135132102187688728
 SphereCollider:
   m_ObjectHideFlags: 1

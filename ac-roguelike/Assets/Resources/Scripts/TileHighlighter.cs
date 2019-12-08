@@ -4,35 +4,52 @@ using UnityEngine;
 
 public class TileHighlighter : MonoBehaviour
 {
-    bool isSelected = false;
+    public bool isSelected = false;
+    private GameObject SelectedTile;
+    MasterScript master;
 
-	void Start ()
+    private void Awake()
+    {
+        master = Resources.Load<MasterScript>("Scripts/MasterScript");
+        
+    }
+    void Start ()
     { 
 	}
 	void Update ()
     {
-        if (isSelected)
+        if (Input.GetMouseButton(1))
         {
-            this.GetComponent<Renderer>().material.color = Color.green;
+            isSelected = false;
+            MasterScript.LastSelected = null;
+        }
+        if (!isSelected)
+       
+       
+        {
+            this.GetComponent<Renderer>().material.color = Color.white;
         }
     }
 
     private void OnMouseDown()
     {
-        isSelected = !isSelected;
+
+        isSelected = true;
+        SelectedTile = this.gameObject;
+        MasterScript.LastSelected = SelectedTile;
+        SelectedTile.GetComponent<Renderer>().material.color = Color.red;
+        Debug.Log("Last Selected" + MasterScript.LastSelected.transform.position);
     }
 
     private void OnMouseOver()
     {
-        if (!isSelected)
-        {
-            this.GetComponent<Renderer>().material.color = Color.red;
-        }
+        
     }
 
     private void OnMouseExit()
     {
-        this.GetComponent<Renderer>().material.color = Color.white;
+        isSelected = false;
+        MasterScript.LastSelected = null;
     }
 
     private void OnMouseEnter()

@@ -84,6 +84,7 @@ public class UIShop : MonoBehaviour
     void BuyUnit()
     {
         UnitData unit = new UnitData("testORK", 1, false, 1, 100f, 10f, 0f, 1f, 1, 15f, 15f, 0);
+        MasterScript.units.Add(unit);
         unit.gameObject = Instantiate(unitPref);
         unit.gameObject.transform.position = new Vector3(0, -2, -unit.gameObject.transform.localScale.z);
 

@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 23494744866028544}
   - component: {fileID: 136100398461906176}
   - component: {fileID: 114617670124090316}
+  - component: {fileID: 114643043141706688}
+  - component: {fileID: 114576942032843312}
   m_Layer: 0
   m_Name: Platzhalter2
   m_TagString: Untagged
@@ -85,6 +87,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1327782606565802}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114576942032843312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327782606565802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a4812f9f17e7d04b8f859510106284b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114617670124090316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,6 +109,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 805bae9bff92d494a90ee95a0bd2dad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
+--- !u!114 &114643043141706688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327782606565802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d3b843d38659c41abd4727636b8032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
 --- !u!136 &136100398461906176
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -71,6 +71,7 @@
     <Compile Include="Assets\Resources\Scripts\UIShop.cs" />
     <Compile Include="Assets\Resources\Scripts\Unit.cs" />
     <Compile Include="Assets\Resources\Scripts\UnitManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\UnitMover.cs" />
     <Compile Include="Assets\Resources\Scripts\Weapons.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/MobaSquadGem/MobaSquad1stGem/ac-roguelike/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
