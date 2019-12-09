@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    bool ShopIsActiv;
+    public bool ShopIsActiv;
     public GameObject uiShop;
 
     private int playerGold;

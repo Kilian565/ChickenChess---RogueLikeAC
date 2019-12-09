@@ -74,12 +74,13 @@ public class MasterScript : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
+            unit = new UnitData();
             unit.gameObject = Instantiate(unitPref);
             unit.gameObject.name = unit.gameObject.name + "" + i + "";
             unit.SetTag();
             unit.gameObject.transform.position = new Vector3(0f +i, 0f +i, -0.5f);
             units.Add(unit);
-            
+            Debug.Log(units.Capacity);
                
 
         }
@@ -129,17 +130,19 @@ public class MasterScript : MonoBehaviour
 
         if (RoundIsStarted)
         {
-            foreach (UnitData unit in units)
+            foreach (UnitData item in units)
             {
-                if (unit.gameObject.transform.position != enemy.gameObject.transform.position - new Vector3(-1f,-1f,0))
+                
+                if ((item.gameObject.transform.position - enemy.gameObject.transform.position).magnitude >= 1.0f)
                 {
-                 //unit.gameObject.transform.LookAt(enemy.gameObject.transform);
-                 unit.gameObject.transform.Translate((Vector3.up / 2f) * Time.deltaTime ,Space.Self);
+                 item.gameObject.transform.LookAt(enemy.gameObject.transform);
+                 item.gameObject.transform.Translate((item.gameObject.transform.forward / 2f) * Time.deltaTime ,Space.World);
 
                 }
-                else if (unit.gameObject.transform.position != enemy.gameObject.transform.position - new Vector3(-1, -1, 0))
+                else 
+
                 {
-                    unit.gameObject.transform.Translate(Vector3.zero);
+                    // unit.gameObject.transform.Translate(Vector3.zero);
                 }
             }
         }
