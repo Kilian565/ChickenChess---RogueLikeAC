@@ -14,8 +14,8 @@ public class UnitData
     public bool isEnemey;
     public int race;
 
-
     public float healthPoints;
+    public float MaxHealth;
     public float physicalDamage;
     public float magicDamage;
     public float attackSpeed;
@@ -61,6 +61,7 @@ public class UnitData
         this.armor = armor;
         this.magicResistance = magicResistance;
         this.critChance = critChance;
+        this.MaxHealth = healthPoints;
        
     }
 
@@ -88,9 +89,25 @@ public class UnitData
         }
 
     }
-    public void Attack()
+    public void GettingHit()
     {
+        if (MaxHealth > healthPoints && healthPoints > 75)
+        {
+            this.gameObject.GetComponent<Renderer>().material.color = Color.green;
+        }
+        if (healthPoints < 75 && healthPoints > 25)
+        {
+            this.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+        }
 
+        if (healthPoints > 0 && healthPoints <25 )
+        {
+            this.gameObject.GetComponent<Renderer>().material.color = Color.red;
+        }
+        else if (healthPoints <=0)
+        {
+            this.gameObject.GetComponent<Renderer>().material.color = Color.black;
+        }
 
     }
 }

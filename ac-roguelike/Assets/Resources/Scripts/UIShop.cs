@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class UIShop : MonoBehaviour
 {
+    
+    bool shopIsActive;
     Button[] slotButtons;
     GameObject currentUnit = null;
     public GameObject uiShop;
     public GameObject[] platzhalter;
     Text[] slottext;
+    Vector3 coord;
 
     bool slotIsEmpty = true;
 
@@ -21,31 +24,34 @@ public class UIShop : MonoBehaviour
         
         slotButtons = uiShop.GetComponentsInChildren<Button>();
         slottext = new Text[slotButtons.Length];
+       
         for (int i = 0; i < slotButtons.Length; i++)
         {
             slottext[i] = slotButtons[i].GetComponentInChildren<Text>();
-           
+
         }
         unitPref = Resources.Load<GameObject>("Prefabs/PlatzhalterPrefabs/Platzhalter3");
+        
         slotButtons[0].onClick.AddListener(Slot1);
         slotButtons[1].onClick.AddListener(Slot2);
         slotButtons[2].onClick.AddListener(Slot3);
         slotButtons[3].onClick.AddListener(Slot4);
         slotButtons[4].onClick.AddListener(Slot5);
-        
+
     }
 
     void Start()
     {
-        
 
     }
 
     void Update()
     {
-       
+
         ShopOddsCalculation();
-        
+        ActivateShopText();
+       
+
     }
 
     void ShopOddsCalculation()
@@ -55,10 +61,7 @@ public class UIShop : MonoBehaviour
             foreach (var item in slotButtons)
             {
                 currentUnit = platzhalter[Random.Range(0, 4)];
-                for (int i = 0; i < slotButtons.Length; i++)
-                {
-                    slottext[i].text = currentUnit.ToString();
-                }
+
             }
             slotIsEmpty = false;
             Debug.Log("slots mit Units ausgestattet");
@@ -82,7 +85,10 @@ public class UIShop : MonoBehaviour
         if (PlayerStats.playerGold > 0 && Input.GetMouseButtonUp(0))
         {
             BuyUnit();
+
             slottext[1].text = currentUnit.ToString();
+
+
             Debug.Log("ich wurde gedrückt: " + slotButtons[1].ToString());
             PlayerStats.playerGold = PlayerStats.playerGold - 1;
             slotIsEmpty = true;
@@ -126,11 +132,43 @@ public class UIShop : MonoBehaviour
 
     void BuyUnit()
     {
+        
         UnitData unit = new UnitData("testORK", 1, false, 1, 100f, 10f, 0f, 1f, 1, 15f, 15f, 0);
         MasterScript.units.Add(unit);
         unit.gameObject = Instantiate(currentUnit);
-        unit.gameObject.transform.position = new Vector3(0, -2, -unit.gameObject.transform.localScale.z);
+        
+        coord = new Vector3(GameObject.Find("Bench 0").transform.position.x, GameObject.Find("Bench 0").transform.position.y, GameObject.Find("Bench 0").transform.position.z - 1);
+        //Vector3 tempCoord = coord;
+        
+       
+        unit.gameObject.transform.position = coord;
 
 
+
+    }
+
+    private void ActivateShopText()
+    {
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            shopIsActive = !shopIsActive;
+        }
+
+        if (shopIsActive)
+        {
+            for (int i = 0; i < slottext.Length; i++)
+            {
+                slottext[i].gameObject.SetActive(true);
+            }
+
+        }
+        else
+        {
+            for (int i = 0; i < slottext.Length; i++)
+            {
+                slottext[i].gameObject.SetActive(false);
+            }
+        }
+            
     }
 }

@@ -38,7 +38,7 @@ public class MasterScript : MonoBehaviour
         enemyPref = Resources.Load<GameObject>("Prefabs/PlatzhalterPrefabs/Platzhalter4");
         unitPref = Resources.Load<GameObject>("Prefabs/PlatzhalterPrefabs/Platzhalter2");
         unit = new UnitData("Killer", 2, false, 1, 100, 1, 1, 1, 1, 1, 1, 1);
-        enemy = new UnitData("EnemyKiller", 1, true, 1, 100, 1, 1, 1, 1, 1, 1, 1);
+        enemy = new UnitData("EnemyKiller", 1, true, 1, 200, 1, 1, 1, 1, 1, 1, 1);
 
     }
     void Start()
@@ -56,6 +56,7 @@ public class MasterScript : MonoBehaviour
     void Update()
     {
         SetTilesOccupied();
+        
         RoundStart();
     }
 
@@ -72,18 +73,15 @@ public class MasterScript : MonoBehaviour
 
         Instantiate(uiShopPref);
 
-        for (int i = 0; i < 3; i++)
-        {
-            unit = new UnitData();
+        
+            
             unit.gameObject = Instantiate(unitPref);
-            unit.gameObject.name = unit.gameObject.name + "" + i + "";
+            unit.gameObject.name = unit.gameObject.name;
             unit.SetTag();
-            unit.gameObject.transform.position = new Vector3(0f +i, 0f +i, -0.5f);
+            unit.gameObject.transform.position = new Vector3(0f , 0f , -0.5f);
             units.Add(unit);
-            Debug.Log(units.Capacity);
-               
-
-        }
+           
+       
 
         Debug.Log(unit.GetCoordinate());
 
@@ -122,6 +120,12 @@ public class MasterScript : MonoBehaviour
 
     private void RoundStart()
     {
+        unit.GettingHit();
+        enemy.GettingHit();
+        bool unitIsMoving;
+        bool enemyIsMoving;
+        Vector3 Ecoord;
+        
 
         if (Input.GetKey(KeyCode.G))
         {
@@ -130,21 +134,51 @@ public class MasterScript : MonoBehaviour
 
         if (RoundIsStarted)
         {
+            unitIsMoving = true;
+            enemyIsMoving = true;
             foreach (UnitData item in units)
             {
+                 Vector3 coord;
+                 coord = new Vector3( Mathf.RoundToInt( item.gameObject.transform.position.x), Mathf.RoundToInt(item.gameObject.transform.position.y),-1);
                 
-                if ((item.gameObject.transform.position - enemy.gameObject.transform.position).magnitude >= 1.0f)
+                if ((item.gameObject.transform.position - enemy.gameObject.transform.position).magnitude >= 1.25f && unitIsMoving)
                 {
                  item.gameObject.transform.LookAt(enemy.gameObject.transform);
                  item.gameObject.transform.Translate((item.gameObject.transform.forward / 2f) * Time.deltaTime ,Space.World);
-
+                    unitIsMoving = !unitIsMoving;
                 }
                 else 
 
                 {
-                    // unit.gameObject.transform.Translate(Vector3.zero);
+                    unitIsMoving = false;
+                    item.gameObject.transform.position = coord;
+                    item.gameObject.GetComponent<Renderer>().material.color = Color.green;
+                    float Dmg = (item.physicalDamage + item.magicDamage)/2;
+                    enemy.healthPoints -= Dmg + Time.deltaTime;
+                    
+                    Debug.Log(enemy.healthPoints);
+                
                 }
+                
             }
+            
+            Ecoord = new Vector3(Mathf.RoundToInt(enemy.gameObject.transform.position.x), Mathf.RoundToInt(enemy.gameObject.transform.position.y), -1);
+
+            if ((enemy.gameObject.transform.position - unit.gameObject.transform.position).magnitude >= 1.5f && enemyIsMoving)
+            {
+                enemy.gameObject.transform.LookAt(unit.gameObject.transform);
+                enemy.gameObject.transform.Translate((enemy.gameObject.transform.forward / 2f) * Time.deltaTime, Space.World);
+                enemyIsMoving = true;
+            }
+            else
+
+            {
+                enemyIsMoving = false;
+                enemy.gameObject.GetComponent<Renderer>().material.color = Color.green;
+                enemy.gameObject.transform.position = Ecoord;
+
+            }
+            
         }
     }
 
