@@ -15,7 +15,7 @@ public class MasterScript : MonoBehaviour
     public static GameObject LastSelected;
 
 
-
+    Canvas rerollButtonPref;
     Canvas uiShopPref;
 
     GameObject tilePref;
@@ -30,7 +30,7 @@ public class MasterScript : MonoBehaviour
     private void Awake()
     {
 
-
+        rerollButtonPref = Resources.Load<Canvas>("Prefabs/RerollButton");
         uiShopPref = Resources.Load<Canvas>("Prefabs/InGame_UI");
         tilePref = Resources.Load<GameObject>("Prefabs/Cube");
         cameraPref = Resources.Load<GameObject>("Prefabs/MainCamera");
@@ -71,7 +71,7 @@ public class MasterScript : MonoBehaviour
         //units.Add(enemy);
 
         Instantiate(uiShopPref);
-
+        Instantiate(rerollButtonPref);
         for (int i = 0; i < 3; i++)
         {
             unit.gameObject = Instantiate(unitPref);
