@@ -25,7 +25,7 @@ public class UnitData
     public int critChance;
     public GameObject gameObject;
     private Vector2Int coord;
-    private Weapons weapon;
+    public Weapons weapon;
 
 
     public UnitData()
@@ -61,9 +61,11 @@ public class UnitData
         this.armor = armor;
         this.magicResistance = magicResistance;
         this.critChance = critChance;
-        this.MaxHealth = healthPoints;
+        healthPoints = this.MaxHealth;
        
     }
+
+    
 
     public void FindEnemy()
     {

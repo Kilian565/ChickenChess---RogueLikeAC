@@ -9,6 +9,8 @@ public class Weapons
     public float magicalDamage;
     public float attackSpeed;
     public int attackRange;
+    public GameObject gameObject;
+    Vector3 pos;
 
     public Weapons()
     {
@@ -20,6 +22,7 @@ public class Weapons
                    float magicalDamage,
                    float attackSpeed,
                    int attackRange
+                   
                   )
     {
         this.unitClass = unitClass;
@@ -27,6 +30,9 @@ public class Weapons
         this.magicalDamage = magicalDamage;
         this.attackSpeed = attackSpeed;
         this.attackRange = attackRange;
+        
+      
+        
     }
 
 }
