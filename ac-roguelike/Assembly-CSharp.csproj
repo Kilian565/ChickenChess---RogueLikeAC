@@ -62,6 +62,7 @@
     <Compile Include="Assets\Resources\Scripts\GridElement.cs" />
     <Compile Include="Assets\Resources\Scripts\GridScript.cs" />
     <Compile Include="Assets\Resources\Scripts\MasterScript.cs" />
+    <Compile Include="Assets\Resources\Scripts\Pathfinding.cs" />
     <Compile Include="Assets\Resources\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Resources\Scripts\SimplePathfind.cs" />
     <Compile Include="Assets\Resources\Scripts\TileHighlighter.cs" />

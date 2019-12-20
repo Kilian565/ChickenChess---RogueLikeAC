@@ -13,6 +13,9 @@ public class GridElement
     public bool isOccupied;
     public bool isSelected;
 
+    public static Dictionary<Vector2Int, GridElement> coordRef = new Dictionary<Vector2Int, GridElement>();
+    public static Dictionary<GameObject, GridElement> goRef = new Dictionary<GameObject ,GridElement>();
+
     // Konstruktor **parameter hinzufügen**
     public GridElement(Vector2Int coordinate)
     {

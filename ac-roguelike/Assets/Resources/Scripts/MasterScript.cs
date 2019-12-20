@@ -6,12 +6,14 @@ public class MasterScript : MonoBehaviour
 {
     public bool RoundIsStarted;
 
-    public static List<GridElement> tiles = new List<GridElement>();
+   // public static List<GridElement> tiles = new List<GridElement>();
     public static List<UnitData> units = new List<UnitData>();
     public static List<UnitData> enemies = new List<UnitData>();
     public GridElement tile;
     public int gridheigth = 8;
     public int gridwidth = 8;
+
+    public GridElement[,] tiles;
 
 
     public static GameObject LastSelected;
@@ -75,6 +77,7 @@ public class MasterScript : MonoBehaviour
         enemy.SetTag();
         enemy.gameObject.transform.position = new Vector3(3f, 7f, -1f);
         enemies.Add(enemy);
+
         //enemy2.gameObject = Instantiate(enemyPref);
         //enemy2.SetTag();
         //enemy2.gameObject.transform.position = new Vector3(1f, 7f, -1f);
@@ -118,7 +121,7 @@ public class MasterScript : MonoBehaviour
                 tile.gameObject = Instantiate(tilePref);
                 tile.gameObject.transform.position = new Vector3(tile.coordinate.x, tile.coordinate.y, 0);
                 tile.gameObject.name = "Tile " + x + "/" + y;
-                tiles.Add(tile);
+               // tiles.Add(tile);
             }
         }
     }
@@ -127,7 +130,7 @@ public class MasterScript : MonoBehaviour
         for (int x = 0; x < gridwidth; x++)
         {
             tile = new GridElement(new Vector2Int(x, -2));
-            tiles.Add(tile);
+            //tiles.Add(tile);
             tile.gameObject = Instantiate(tilePref);
             tile.gameObject.transform.position = new Vector3(tile.coordinate.x, tile.coordinate.y, 0);
             tile.gameObject.name = "Bench " + x;
@@ -254,6 +257,17 @@ public class MasterScript : MonoBehaviour
             }
         }
 
+    }
+
+    private GridElement[] GetNeighbots(GridElement tile)
+    {
+
+        int x = tile.coordinate.x;
+        int y = tile.coordinate.y;
+
+
+        
+        return tiles[x,y];
     }
 
 }
