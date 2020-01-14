@@ -19,7 +19,7 @@ public class MasterScript : MonoBehaviour
     public static GameObject LastSelected;
 
 
-
+    Canvas rerollButtonPref;
     Canvas uiShopPref;
 
     GameObject weaponPref;
@@ -36,6 +36,10 @@ public class MasterScript : MonoBehaviour
     private void Awake()
     {
 
+<<<<<<< HEAD
+=======
+        rerollButtonPref = Resources.Load<Canvas>("Prefabs/RerollButton");
+>>>>>>> Hauke
         uiShopPref = Resources.Load<Canvas>("Prefabs/InGame_UI");
         tilePref = Resources.Load<GameObject>("Prefabs/Cube");
         cameraPref = Resources.Load<GameObject>("Prefabs/MainCamera");
@@ -87,7 +91,20 @@ public class MasterScript : MonoBehaviour
         //units.Add(enemy);
 
         Instantiate(uiShopPref);
+<<<<<<< HEAD
 
+=======
+        Instantiate(rerollButtonPref);
+        for (int i = 0; i < 3; i++)
+        {
+            unit.gameObject = Instantiate(unitPref);
+            unit.gameObject.name = unit.gameObject.name + "" + i + "";
+            unit.SetTag();
+            unit.gameObject.transform.position = new Vector3(0f +i, 0f +i, -0.5f);
+            units.Add(unit);
+            
+               
+>>>>>>> Hauke
 
 
         unit.gameObject = Instantiate(unitPref);
