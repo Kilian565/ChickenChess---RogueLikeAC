@@ -6,7 +6,7 @@ public class MasterScript : MonoBehaviour
 {
     public bool RoundIsStarted;
 
-   // public static List<GridElement> tiles = new List<GridElement>();
+    // public static List<GridElement> tiles = new List<GridElement>();
     public static List<UnitData> units = new List<UnitData>();
     public static List<UnitData> enemies = new List<UnitData>();
     public GridElement tile;
@@ -62,7 +62,7 @@ public class MasterScript : MonoBehaviour
 
     void Update()
     {
-        SetTilesOccupied();
+       // SetTilesOccupied();
 
         RoundStart();
     }
@@ -121,7 +121,7 @@ public class MasterScript : MonoBehaviour
                 tile.gameObject = Instantiate(tilePref);
                 tile.gameObject.transform.position = new Vector3(tile.coordinate.x, tile.coordinate.y, 0);
                 tile.gameObject.name = "Tile " + x + "/" + y;
-               // tiles.Add(tile);
+                // tiles.Add(tile);
             }
         }
     }
@@ -239,35 +239,35 @@ public class MasterScript : MonoBehaviour
         }
     }
 
-    private void SetTilesOccupied()
-    {
-        foreach (GridElement tile in tiles)
-        {
-            foreach (UnitData unit in units)
-            {
+    //private void SetTilesOccupied()
+    //{
+    //    foreach (GridElement tile in tiles)
+    //    {
+    //        foreach (UnitData unit in units)
+    //        {
 
-                if (tile.coordinate == unit.GetCoordinate())
-                {
-                    tile.isOccupied = true;
-                    Debug.Log(tile.coordinate + " ist belegt");
-
-
-                }
-
-            }
-        }
-
-    }
-
-    private GridElement[] GetNeighbots(GridElement tile)
-    {
-
-        int x = tile.coordinate.x;
-        int y = tile.coordinate.y;
+    //            if (tile.coordinate == unit.GetCoordinate())
+    //            {
+    //                tile.isOccupied = true;
+    //                Debug.Log(tile.coordinate + " ist belegt");
 
 
-        
-        return tiles[x,y];
-    }
+    //            }
+
+    //        }
+    //    }
+
+    //}
+
+    //private GridElement[] GetNeighbots(GridElement tile)
+    //{
+
+    //    int x = tile.coordinate.x;
+    //    int y = tile.coordinate.y;
+
+
+
+    //    return tiles[x, y];
+    //}
 
 }
