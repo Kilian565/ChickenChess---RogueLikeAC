@@ -564,7 +564,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiShop: {fileID: 1814834390182804}
-  reButton: {fileID: 1613140191997822, guid: 3a6036cc798546044bdb8f6b917f20a6, type: 2}
   platzhalter:
   - {fileID: 1232431679541778, guid: badffe7619df7f547890df51fa592859, type: 2}
   - {fileID: 1327782606565802, guid: 51df55c3e63adfa4e9e1dc818867acf3, type: 2}

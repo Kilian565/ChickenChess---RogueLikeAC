@@ -8,10 +8,8 @@ public class UIShop : MonoBehaviour
     
     bool shopIsActive;
     Button[] slotButtons;
-    Button rerollButton;
     GameObject currentUnit = null;
     public GameObject uiShop;
-    public GameObject reButton;
     public GameObject[] platzhalter;
     Text[] slottext;
     Vector3 coord;
@@ -19,7 +17,6 @@ public class UIShop : MonoBehaviour
 
     bool slotIsEmpty = true;
 
-<<<<<<< HEAD
     GameObject unitPref;
     GameObject weaponPref;
 
@@ -38,32 +35,15 @@ public class UIShop : MonoBehaviour
         unitPref = Resources.Load<GameObject>("Prefabs/PlatzhalterPrefabs/Platzhalter3");
         weaponPref = Resources.Load<GameObject>("Prefabs/Kanabo_Club_Weapon");
         
-=======
-    private void Awake()
-    {
-        slotButtons = uiShop.GetComponentsInChildren<Button>();
-        rerollButton = reButton.GetComponentInChildren<Button>();
-    }
-
-    void Start ()
-    {       
->>>>>>> Hauke
         slotButtons[0].onClick.AddListener(Slot1);
         slotButtons[1].onClick.AddListener(Slot2);
         slotButtons[2].onClick.AddListener(Slot3);
         slotButtons[3].onClick.AddListener(Slot4);
         slotButtons[4].onClick.AddListener(Slot5);
-<<<<<<< HEAD
 
     }
 
     void Start()
-=======
-        rerollButton.onClick.AddListener(Reroll);
-	}
-	
-	void Update ()
->>>>>>> Hauke
     {
 
     }
@@ -94,7 +74,6 @@ public class UIShop : MonoBehaviour
 
     void Slot1()
     {
-<<<<<<< HEAD
         if (PlayerStats.playerGold > 0 && Input.GetMouseButtonUp(0))
         {
             BuyUnit();
@@ -103,19 +82,10 @@ public class UIShop : MonoBehaviour
             PlayerStats.playerGold = PlayerStats.playerGold - 1;
             slotIsEmpty = true;
 
-=======
-        if (PlayerStats.playerGold > 0 && Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            BuyUnit();
-            Debug.Log("ich wurde gedrückt: " + slotButtons[0].ToString());
-            PlayerStats.playerGold = PlayerStats.playerGold - 1;
-            slotIsEmpty = true;
->>>>>>> Hauke
         }
     }
     void Slot2()
     {
-<<<<<<< HEAD
         if (PlayerStats.playerGold > 0 && Input.GetMouseButtonUp(0))
         {
             BuyUnit();
@@ -123,11 +93,6 @@ public class UIShop : MonoBehaviour
             slottext[1].text = currentUnit.ToString();
 
 
-=======
-        if (PlayerStats.playerGold > 0 && Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            BuyUnit();
->>>>>>> Hauke
             Debug.Log("ich wurde gedrückt: " + slotButtons[1].ToString());
             PlayerStats.playerGold = PlayerStats.playerGold - 1;
             slotIsEmpty = true;
@@ -135,16 +100,10 @@ public class UIShop : MonoBehaviour
     }
     void Slot3()
     {
-<<<<<<< HEAD
         if (PlayerStats.playerGold > 0 && Input.GetMouseButtonUp(0))
         {
             BuyUnit();
             slottext[2].text = currentUnit.ToString();
-=======
-        if (PlayerStats.playerGold > 0 && Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            BuyUnit();
->>>>>>> Hauke
             Debug.Log("ich wurde gedrückt: " + slotButtons[2].ToString());
             PlayerStats.playerGold = PlayerStats.playerGold - 1;
             slotIsEmpty = true;
@@ -152,27 +111,18 @@ public class UIShop : MonoBehaviour
     }
     void Slot4()
     {
-<<<<<<< HEAD
         if (PlayerStats.playerGold > 0 && Input.GetMouseButtonUp(0))
         {
             slottext[3].text = currentUnit.ToString();
-=======
-        if (PlayerStats.playerGold > 0 && Input.GetKeyUp(KeyCode.Mouse0))
-        {
->>>>>>> Hauke
             BuyUnit();
             Debug.Log("ich wurde gedrückt: " + slotButtons[3].ToString());
             PlayerStats.playerGold = PlayerStats.playerGold - 1;
             slotIsEmpty = true;
-<<<<<<< HEAD
 
-=======
->>>>>>> Hauke
         }
     }
     void Slot5()
     {
-<<<<<<< HEAD
         if (PlayerStats.playerGold > 0 && Input.GetMouseButtonUp(0))
         {
             BuyUnit();
@@ -181,14 +131,6 @@ public class UIShop : MonoBehaviour
             PlayerStats.playerGold = PlayerStats.playerGold - 1;
             slotIsEmpty = true;
 
-=======
-        if (PlayerStats.playerGold > 0 && Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            BuyUnit();
-            Debug.Log("ich wurde gedrückt: " + slotButtons[4].ToString());
-            PlayerStats.playerGold = PlayerStats.playerGold - 1;
-            slotIsEmpty = true;
->>>>>>> Hauke
         }
     }
 
@@ -205,7 +147,6 @@ public class UIShop : MonoBehaviour
         
         coord = new Vector3(GameObject.Find("Bench 0").transform.position.x, GameObject.Find("Bench 0").transform.position.y, GameObject.Find("Bench 0").transform.position.z - 1);
         MasterScript.units.Add(unit);
-<<<<<<< HEAD
         //Vector3 tempCoord = coord;
         
        
@@ -239,14 +180,5 @@ public class UIShop : MonoBehaviour
             }
         }
             
-=======
-        unit.gameObject = Instantiate(currentUnit);
-        unit.gameObject.transform.position = new Vector3(0, -2, -unit.gameObject.transform.localScale.z);
-    }
-
-    void Reroll()
-    {
-        slotIsEmpty = true;
->>>>>>> Hauke
     }
 }
